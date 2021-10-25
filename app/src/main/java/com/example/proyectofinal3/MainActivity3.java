@@ -2,7 +2,9 @@ package com.example.proyectofinal3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -12,4 +14,8 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
     }
 
+    public void volver33(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+        startActivity(intent);
+    }
 }
