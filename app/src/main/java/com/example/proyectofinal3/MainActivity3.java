@@ -17,5 +17,9 @@ public class MainActivity3 extends AppCompatActivity {
     public void volver33(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
+        finishAffinity();
+
+
+
     }
 }

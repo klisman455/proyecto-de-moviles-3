@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal3">
         <activity
+            android:name=".agregarPelicula"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity5"
             android:exported="true" />
         <activity

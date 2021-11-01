@@ -8,7 +8,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
                 <ImageView
-                    android:id="@+id/poster"
+                    android:id="@+id/etPoster"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginTop="5dp"
@@ -23,7 +23,7 @@
                     android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/tvTitulo"
+                            android:id="@+id/etTitulo"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -34,7 +34,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvDescripcion"
+                            android:id="@+id/etDescripcion"
                             android:layout_width="299dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"

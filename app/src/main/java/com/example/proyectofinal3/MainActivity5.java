@@ -16,5 +16,7 @@ public class MainActivity5 extends AppCompatActivity {
     public void volverLogin(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
+
+        finishAffinity();
     }
 }

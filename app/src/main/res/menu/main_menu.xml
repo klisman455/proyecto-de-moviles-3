@@ -9,6 +9,10 @@
 
     <item
         android:id="@+id/item2"
-        android:title="Opcion 2"
-        app:showAsAction="always" />
+        android:title="opcion 2"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item3"
+        android:title="agregar pelicula"
+        app:showAsAction="ifRoom" />
 </menu>
