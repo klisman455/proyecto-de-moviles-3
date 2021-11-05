@@ -48,6 +48,7 @@ public class MainActivity4 extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot usuario: Objects.requireNonNull(task.getResult())) {
 
+
                         }
 
                     } else {
@@ -69,9 +70,9 @@ public class MainActivity4 extends AppCompatActivity {
         usuario.put("nombre", nombre);
         usuario.put("precio", pais);
         usuario.put("clave", clave);
-        usuario.put("Numbre Usuario",nombreUsuario);
-        usuario.put("Numero usuario",numeroUsuario);
-        usuario.put("ccv",ccv);
+        usuario.put("NombreUsuario",nombreUsuario);
+        usuario.put("NumeroUsuario",numeroUsuario);
+        usuario.put("CCV",ccv);
 
         db.collection("usuarios")
                 .add(usuario)
