@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal3">
         <activity
-            android:name=".MainActivity"
+            android:name=".agregarPelicula"
             android:exported="true" />
         <activity
             android:name=".MainActivity5"
@@ -27,7 +27,7 @@
             android:name=".MainActivity2"
             android:exported="true" />
         <activity
-            android:name=".agregarPelicula"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

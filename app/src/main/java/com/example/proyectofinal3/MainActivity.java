@@ -11,11 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     String idd, clave;
     String nombre;
     Button logiarse;
+    String usuario;
+    String pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,41 +48,40 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void login(View view) {
-            String num1= etPasword.getText().toString();
-            String id= tvId.getText().toString();
+            String pass= etPasword.getText().toString();
+            String nombre= tvId.getText().toString();
 
-            if( etPasword !=null )
-                {
+
 
              db.collection("usuarios")
-                     .document(id)
+                     .whereEqualTo("nombre",nombre)
                      .get()
-                     .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                          @Override
-                         public void onSuccess(DocumentSnapshot documentSnapshot) {
+                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                           if(task.isSuccessful()) {
+                               if (task.getResult().isEmpty()) {
+                                   Log.d("REROR","usuario y/o contraseña no coinciden 1");
+                               }else {
 
-                             if (Integer.parseInt(documentSnapshot.getData().get("clave").toString()) == Integer.parseInt(num1)) {
-                                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                                 startActivity(intent);
+                                   for (QueryDocumentSnapshot document : task.getResult()) {
+                                       if (pass.equals(document.getData().get("clave"))) {
+                                           Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                                           startActivity(intent);
+                                       }else{
+                                           Log.d("REROR","usuaio y/o contraseña no coinciden2");
+                                       }
+                                   }
+                               }
+                           }else {
+                               Log.e("EREROR","error getting docmuent", task.getException());
+                           }
 
-                             } else {
-
-                                 Toast.makeText(getApplicationContext(), "vuelva a ingresar la contraseña o el usuario", Toast.LENGTH_SHORT).show();
-
-                             }
-
-                         }
-                     })
-                     .addOnFailureListener(new OnFailureListener() {
-                         @Override
-                         public void onFailure(@NonNull Exception e) {
-                             Log.w("app", "error al traer document", e);
                          }
                      });
-         }else{
 
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent); }
+
+
     }
 
 }
