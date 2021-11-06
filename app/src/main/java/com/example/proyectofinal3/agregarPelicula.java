@@ -49,7 +49,7 @@ public class agregarPelicula extends AppCompatActivity {
     public void mostrar(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
-
+        finishAffinity();
 
     }
 }

@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_agregar_pelicula.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_agregar_pelicula.xml" value="0.33" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main2.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/contenido.xml" value="0.1046875" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main3.xml" value="0.5" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main4.xml" value="0.33" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/activity_main5.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/contenido.xml" value="0.22" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USUARIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/uauRIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/uauRIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2890625" />
         <entry key="..\:/Users/uauRIO/AndroidStudioProjects/proyecto-de-moviles-3/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2890625" />

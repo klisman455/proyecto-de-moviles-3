@@ -57,12 +57,12 @@
 
     <Button
         android:id="@+id/btregistrar"
-        android:layout_width="123dp"
-        android:layout_height="53dp"
+        android:layout_width="140dp"
+        android:layout_height="55dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="56dp"
         android:onClick="pagRegistro"
-        android:text="registrar"
+        android:text="registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.929"

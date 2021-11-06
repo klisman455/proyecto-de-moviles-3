@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    EditText etNombre, etPais,etContraseña,NombreUsuario,NumeroUsuario,CCV;
+    EditText etNombre, etPais,correoElectronico,etContraseña,NombreUsuario,NumeroUsuario,CCV;
     FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         etNombre = findViewById(R.id.etNombre);
         etPais = findViewById(R.id.etPais);
+        correoElectronico= findViewById(R.id.CorreoElectronico);
         etContraseña = findViewById(R.id.etContraseña);
         NombreUsuario = findViewById(R.id.etNombreUsuario);
         NumeroUsuario =findViewById(R.id.cardNumber);
@@ -47,10 +48,7 @@ public class MainActivity4 extends AppCompatActivity {
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot usuario: Objects.requireNonNull(task.getResult())) {
 
-
-                        }
 
                     } else {
                         Log.w("App", "error de documentos", task.getException());
@@ -62,6 +60,7 @@ public class MainActivity4 extends AppCompatActivity {
     public void guardar(View view) {
         String nombre = etNombre.getText().toString();
         String pais = etPais.getText().toString();
+        String correo = correoElectronico.getText().toString();
         String clave = etContraseña.getText().toString();
         String nombreUsuario = NombreUsuario.getText().toString();
         int numeroUsuario =Integer.parseInt(NumeroUsuario.getText().toString());
@@ -70,6 +69,7 @@ public class MainActivity4 extends AppCompatActivity {
         Map<String, Object> usuario = new HashMap<>();
         usuario.put("nombre", nombre);
         usuario.put("precio", pais);
+        usuario.put("correo", correo);
         usuario.put("clave", clave);
         usuario.put("NombreUsuario",nombreUsuario);
         usuario.put("NumeroUsuario",numeroUsuario);
@@ -80,7 +80,7 @@ public class MainActivity4 extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getApplicationContext(),"Guardado con id"+documentReference.getId(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"bienvenido,su usuario se guardo con id"+documentReference.getId(), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

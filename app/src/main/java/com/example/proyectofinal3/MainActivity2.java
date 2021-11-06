@@ -60,7 +60,9 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.item2:
-
+                Intent intentItem2 = new Intent(getApplicationContext(),MainActivity2.class);
+                startActivity(intentItem2);
+                finishAffinity();
                 return true;
             case R.id.item3:
                 Intent intentItem3 = new Intent(getApplicationContext(),agregarPelicula.class);
@@ -74,15 +76,12 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-    public void volverMenuu(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-    }
     public void volverInicio2(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finishAffinity();
     }
+
 
 }
 

@@ -1,7 +1,10 @@
 package com.example.proyectofinal3;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-
+import android.os.Bundle;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
@@ -22,9 +25,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private Context context;
 
     public ListAdapter(List<Pelicula> misDatos, Context context) {
+
         this.misDatos = misDatos;
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
+
     }
 
     @NonNull
@@ -44,12 +49,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return misDatos.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView titulo, descripcion;
 
         ImageView poster;
         Button btEliminar, btVer;
-
+        String urlVer;
+        private String uriVer;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,11 +63,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             descripcion = itemView.findViewById(R.id.etDescripcion);
             poster = itemView.findViewById(R.id.etPoster);
             btEliminar = itemView.findViewById(R.id.btEliminar);
-            btVer =itemView.findViewById(R.id.btVer);
+            btVer = itemView.findViewById(R.id.btVer);
         }
 
-        public void juntarData(Pelicula item,Context context){
-            String new_titulo= item.getTitulo()+ "("+item.getAnho()+")";
+        public void juntarData(Pelicula item, Context context) {
+            String new_titulo = item.getTitulo() + "(" + item.getAnho() + ")";
             titulo.setText(new_titulo);
             descripcion.setText(item.getDescripcion());
 
@@ -71,16 +77,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             btEliminar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AppDatabaseDataSource dataSource = new AppDatabaseDataSource(view.getContext()) ;
+                    AppDatabaseDataSource dataSource = new AppDatabaseDataSource(view.getContext());
                     dataSource.eliminarPelicula(item);
+                    
                 }
             });
             btVer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(),MainActivity3.class);
-                    intent.putExtra("id",item.getId());
-                    view.getContext().startActivity(intent);
+
+
+
                 }
             });
         }
