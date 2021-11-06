@@ -42,6 +42,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+
         db.collection("usuarios")
                 .get()
                 .addOnCompleteListener(task -> {

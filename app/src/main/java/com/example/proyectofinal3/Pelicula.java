@@ -14,9 +14,9 @@ public class Pelicula {
     @ColumnInfo(name = "año")
     private int anho;
 
-    private int poster;
+    private String poster;
 
-    public Pelicula(String titulo, String descripcion, int anho, int poster) {
+    public Pelicula(String titulo, String descripcion, int anho, String poster) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.anho = anho;
@@ -57,11 +57,11 @@ public class Pelicula {
 
 
 
-    public int getPoster() {
+    public String getPoster() {
         return poster;
     }
 
-    public void setPoster(int poster) {
+    public void setPoster(String poster) {
         this.poster = poster;
     }
 

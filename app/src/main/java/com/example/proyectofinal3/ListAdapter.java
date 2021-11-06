@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
@@ -34,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.juntarData(misDatos.get(position));
+        holder.juntarData(misDatos.get(position),context);
     }
 
     @Override
@@ -43,11 +45,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView titulo, descripcion,anho;
+        TextView titulo, descripcion;
 
         ImageView poster;
         Button btEliminar, btVer;
-        Context context;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,12 +60,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             btVer =itemView.findViewById(R.id.btVer);
         }
 
-        public void juntarData(Pelicula item){
+        public void juntarData(Pelicula item,Context context){
             String new_titulo= item.getTitulo()+ "("+item.getAnho()+")";
             titulo.setText(new_titulo);
             descripcion.setText(item.getDescripcion());
-            item.setPoster(R.drawable.primero);
-            poster.setImageResource(item.getPoster());
+
+            String url = item.getPoster();
+            Picasso.get().load(url).into(ViewHolder.this.poster);
+
             btEliminar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

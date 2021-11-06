@@ -30,17 +30,19 @@ public class agregarPelicula extends AppCompatActivity {
     }
 
     public void agregar(View view) {
-        String titulo, descripcion;
-        int anho, poster;
+        String titulo, descripcion,poster;
+        int anho;
 
         titulo = etTitulo.getText().toString();
         descripcion = etDescripcion.getText().toString();
         anho = Integer.parseInt(etAnho.getText().toString());
-        poster = Integer.parseInt(etPoster.getText().toString());
+        poster = etPoster.getText().toString();
 
         Pelicula pelicula = new Pelicula(titulo, descripcion, anho, poster);
         dataSource.crearPelicula(pelicula);
         Toast.makeText(getApplicationContext(), "Se guardó", Toast.LENGTH_SHORT).show();
+
+
     }
 
 
@@ -48,6 +50,6 @@ public class agregarPelicula extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
 
-        finishAffinity();
+
     }
 }
