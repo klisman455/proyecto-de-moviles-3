@@ -93,6 +93,7 @@ public class MainActivity2 extends AppCompatActivity {
         Uri sitio = Uri.parse("https://pelisflix.li/pelicula/a-todo-gas/");
         Intent intentItem1 = new Intent(Intent.ACTION_VIEW, sitio);
         startActivity(intentItem1);
+        git
     }
 }
 
