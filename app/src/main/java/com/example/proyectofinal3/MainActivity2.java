@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -68,6 +69,11 @@ public class MainActivity2 extends AppCompatActivity {
                 Intent intentItem3 = new Intent(getApplicationContext(),agregarPelicula.class);
                 startActivity(intentItem3);
                 return true;
+            case R.id.item4:
+                Intent intentItem4 = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intentItem4);
+                finishAffinity();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -83,6 +89,11 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
+    public void internet(View view) {
+        Uri sitio = Uri.parse("https://pelisflix.li/pelicula/a-todo-gas/");
+        Intent intentItem1 = new Intent(Intent.ACTION_VIEW, sitio);
+        startActivity(intentItem1);
+    }
 }
 
 
